@@ -27,7 +27,7 @@ def update_board(current_board):
     new_board[(board == 1) & ((neighbor_count == 2) | (neighbor_count == 3))] = 1
     new_board[(board == 0) & (neighbor_count == 3)] = 1
 
-
+    return new_board
 
 
 def show_game(game_board, n_steps=10, pause=0.5):
