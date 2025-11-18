@@ -7,9 +7,11 @@ import matplotlib.pyplot as plt
 
 def update_board(current_board):
     # your code here ...
-    updated_board = current_board
-
-    return updated_board
+    # Copy board to not overwrite it
+    board = current_board.copy()
+    
+    # Create new board from current board
+    new_board = np.zeros_like(board)
 
 
 def show_game(game_board, n_steps=10, pause=0.5):
