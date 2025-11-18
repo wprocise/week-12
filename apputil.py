@@ -23,6 +23,10 @@ def update_board(current_board):
         padded[2:,    0:-2] + padded[2:,    1:-1] + padded[2:,    2:]
     )
 
+    # Apply Conway's Game of Life Rules
+    new_board[(board == 1) & ((neighbor_count == 2) | (neighbor_count == 3))] = 1
+    new_board[(board == 0) & (neighbor_count == 3)] = 1
+
 
 
 
