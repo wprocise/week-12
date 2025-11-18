@@ -15,7 +15,13 @@ def update_board(current_board):
 
     # Pad the array to stop the cells from wrapping and fewer neighbors
     padded = np.pad(board, pad_width=1, mode='constant', constant_values=0)
-    
+
+    # Count neighbors starting with top row, then left/right, then bottom row
+    neighbor_count = (
+        padded[0:-2, 0:-2] + padded[0:-2, 1:-1] + padded[0:-2, 2:] +
+        padded[1:-1, 0:-2]                    + padded[1:-1, 2:] +   
+        padded[2:,    0:-2] + padded[2:,    1:-1] + padded[2:,    2:]
+    )
 
 
 
