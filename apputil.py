@@ -13,6 +13,12 @@ def update_board(current_board):
     # Create new board from current board
     new_board = np.zeros_like(board)
 
+    # Pad the array to stop the cells from wrapping and fewer neighbors
+    padded = np.pad(board, pad_width=1, mode='constant', constant_values=0)
+    
+
+
+
 
 def show_game(game_board, n_steps=10, pause=0.5):
     """
